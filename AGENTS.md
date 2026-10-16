@@ -23,3 +23,20 @@ At the end of a task, report:
 ## Repository direction
 
 JobPilot AI is planned as a modular monolith with a Java 25 LTS / Spring Boot backend, Flutter mobile application (Android first, then iOS), future Angular web application, PostgreSQL/Flyway persistence, n8n integrations, AI-provider integrations, Python document processing, and Docker Compose for local infrastructure. These applications are intentionally not scaffolded until a dedicated, approved task.
+
+## Architecture and modularity rules
+
+1. Follow the architecture overview and [backend guidelines](docs/architecture/backend-guidelines.md) for backend changes. Organize business code by functional domain, not by technical layer across the entire application.
+2. Within a module, keep domain rules independent of HTTP, persistence, frameworks, and external providers. Dependencies point inward: API and infrastructure adapters depend on application and domain code, never the reverse.
+3. Use ports and adapters only at real boundaries: databases, HTTP APIs, AI providers, n8n, document processing, clocks, or other replaceable external concerns. Do not create ports, interfaces, factories, or layers merely to satisfy a pattern.
+4. Keep module coupling low. A module may use another module only through an explicitly documented application-facing contract; do not access another module's repositories, persistence entities, or internal packages.
+5. Prefer a small, stable shared kernel. Move business concepts into a shared package only when they are genuinely shared and have a stable meaning; never use it as a convenience dumping ground.
+6. Preserve domain ownership, authorization, auditability, and the human-approval rule at the relevant module boundary.
+
+## Code quality rules
+
+1. Apply SOLID, DRY, KISS, and YAGNI pragmatically. Favor readable, direct code over speculative reuse or generic frameworks.
+2. Make names, data flow, validation, error handling, and transaction boundaries understandable from the code. Comment decisions and non-obvious constraints, not line-by-line mechanics.
+3. Keep methods and classes focused; extract only when it clarifies a responsibility or enables meaningful reuse/testing.
+4. Test business behavior and risk-prone integration boundaries. Do not add tests that only mirror implementation details or provide no meaningful assertion.
+5. Follow the Definition of Done and review standards in [coding standards](docs/development/coding-standards.md). If an exception is justified, document its reason and scope in the pull request or an ADR where durable.

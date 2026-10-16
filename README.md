@@ -24,8 +24,10 @@ The repository currently contains the project foundations and documentation only
 
 - [Product vision](docs/product/vision.md)
 - [Architecture overview](docs/architecture/overview.md)
+- [Backend architecture guidelines](docs/architecture/backend-guidelines.md)
 - [Architecture decisions](docs/decisions/)
 - [Development guide](docs/development/README.md)
+- [Coding standards and Definition of Done](docs/development/coding-standards.md)
 - [Initial backlog](docs/tasks/README.md)
 
 ## Working agreement

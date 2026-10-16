@@ -19,6 +19,10 @@
 - Keep configuration in environment variables or deployment secret stores; `.env.example` documents names only.
 - Write ADRs for durable architecture decisions.
 
+## Standards
+
+Use the [backend architecture guidelines](../architecture/backend-guidelines.md) for modularity and the [coding standards](coding-standards.md) for code, testing, review, Definition of Done, and future automated controls.
+
 ## AI-assisted development
 
 Agents must follow [AGENTS.md](../../AGENTS.md). Useful initial reusable skills, to create only when recurring work proves their value, are:
