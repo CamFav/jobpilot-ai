@@ -8,8 +8,15 @@
 4. Follow the repository conventions in `.editorconfig`, `.gitattributes`, and the development documentation.
 5. Add or update tests appropriate to the change when executable code is introduced. Run the relevant available checks. Never claim a command or test passed unless it was actually run and its result observed.
 6. Do not add secrets, credentials, personal data, generated local configuration, or real API keys to the repository. Use `.env.example` only for non-sensitive variable names and placeholders.
-7. Do not modify `main` directly. Work on a dedicated branch. Do not push, merge, create releases, deploy, or make external changes without explicit user validation.
+7. Do not modify `main` directly. Work on a dedicated branch for each mission. GitHub Issues and pull requests are optional for this solo project; record the scope and verification locally when they are not used. Use Conventional Commits when committing. Do not push, merge, create releases, deploy, or make external changes without explicit user validation.
 8. Do not install system software or change system configuration without explicit approval.
+
+## Versioned documentation and learning materials
+
+- Keep architecture, product/design, security, operations, ADR, and repository-convention documentation in versioned `docs/` files.
+- Keep personal tutorials, detailed learning exercises, and private pedagogical notes in `.learning/`; it is local and ignored by Git.
+- Explain technical decisions, assumptions, verification, and residual risks in the final task report even when supporting learning material stays local.
+- Offer learning exercises in the conversation or place them in `.learning/`. Do not add personal tutorial material to public repository documentation unless it is necessary to operate or maintain the product.
 
 ## Change completion report
 
@@ -39,4 +46,4 @@ JobPilot AI is planned as a modular monolith with a Java 25 LTS / Spring Boot ba
 2. Make names, data flow, validation, error handling, and transaction boundaries understandable from the code. Comment decisions and non-obvious constraints, not line-by-line mechanics.
 3. Keep methods and classes focused; extract only when it clarifies a responsibility or enables meaningful reuse/testing.
 4. Test business behavior and risk-prone integration boundaries. Do not add tests that only mirror implementation details or provide no meaningful assertion.
-5. Follow the Definition of Done and review standards in [coding standards](docs/development/coding-standards.md). If an exception is justified, document its reason and scope in the pull request or an ADR where durable.
+5. Follow the Definition of Done and review standards in [coding standards](docs/development/coding-standards.md). Perform a documented self-review, optionally assisted by AI. If an exception is justified, record its reason and scope in the task/change record or an ADR where durable.

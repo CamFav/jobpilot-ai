@@ -2,12 +2,12 @@
 
 ## Workflow
 
-1. Create a GitHub Issue or record a scoped task before implementation.
+1. Record a scoped task, expected outcome, and non-goals before implementation. A GitHub Issue is optional.
 2. Read the product, architecture, and relevant ADR documentation.
 3. Work on a branch; never commit directly to `main`.
 4. Plan changes proportionately to risk, then implement the smallest coherent slice.
 5. Run relevant tests and static checks that are available. Record unavailable checks honestly.
-6. Open a pull request for human review; do not push, merge, or deploy without explicit authorization.
+6. Complete a personal review using the coding standards, optionally assisted by AI or a human. A pull request is optional; do not push, merge into `main`, or deploy without explicit authorization.
 
 ## Conventions
 
@@ -22,6 +22,10 @@
 ## Standards
 
 Use the [backend architecture guidelines](../architecture/backend-guidelines.md) for modularity and the [coding standards](coding-standards.md) for code, testing, review, Definition of Done, and future automated controls.
+
+## Documentation boundary
+
+Keep product, architecture, security, operations, and maintainability documentation in versioned `docs/`. Keep personal tutorials, detailed exercises, and private learning notes in the ignored `.learning/` directory. Agents still explain the technical reasoning and verification for their changes in their task reports.
 
 ## AI-assisted development
 

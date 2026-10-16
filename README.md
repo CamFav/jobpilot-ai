@@ -23,16 +23,20 @@ The repository currently contains the project foundations and documentation only
 ## Documentation
 
 - [Product vision](docs/product/vision.md)
+- [Search profiles design](docs/product/search-profiles-design.md)
 - [Architecture overview](docs/architecture/overview.md)
 - [Backend architecture guidelines](docs/architecture/backend-guidelines.md)
+- [Conceptual, logical, and physical data model](docs/architecture/data-model/)
 - [Architecture decisions](docs/decisions/)
 - [Development guide](docs/development/README.md)
 - [Coding standards and Definition of Done](docs/development/coding-standards.md)
+- [Privacy by design](docs/security/privacy-by-design.md)
+- [Security design](docs/security/security-design.md)
 - [Initial backlog](docs/tasks/README.md)
 
 ## Working agreement
 
-Read [AGENTS.md](AGENTS.md) before contributing with an AI agent. Changes must be scoped, reviewed by a human, and made from a feature branch. No direct changes to `main`, pushes, merges, or deployments without explicit approval.
+Read [AGENTS.md](AGENTS.md) before contributing with an AI agent. Changes must be scoped, self-reviewed (optionally with AI or human input), and made from a feature branch. No direct changes to `main`, pushes, merges, or deployments without explicit approval.
 
 ## Local configuration
 

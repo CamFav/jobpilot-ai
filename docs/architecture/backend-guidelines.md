@@ -89,4 +89,4 @@ Examples of valid exceptions:
 - a synchronous in-process call replaces an event when atomicity and simplicity are required;
 - an integration adapter is initially small and local until a second provider justifies a generalized abstraction.
 
-Record the exception and its reason in the pull request. Create an ADR only for a durable, cross-module, or difficult-to-reverse decision. Revisit an exception when coupling, duplication, failure handling, or team ownership makes it costly.
+Record the exception and its reason in the task/change record or pull request when one exists. Create an ADR only for a durable, cross-module, or difficult-to-reverse decision. Revisit an exception when coupling, duplication, failure handling, or team ownership makes it costly.

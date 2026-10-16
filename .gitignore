@@ -6,6 +6,9 @@ Desktop.ini
 .vscode/
 *.iml
 
+# Personal learning materials (local only)
+.learning/
+
 # Environment and secrets
 .env
 .env.*

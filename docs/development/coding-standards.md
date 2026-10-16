@@ -24,9 +24,9 @@ These standards guide future application code. They complement [AGENTS.md](../..
 - Make tests deterministic: control time, IDs, randomness, network calls, and provider responses through real boundaries or test doubles.
 - A bug fix includes a regression test when practical. If it is not practical, explain why in the pull request.
 
-## Code review standards
+## Self-review standards
 
-Reviewers verify that a change:
+Before integration, the developer verifies that a change:
 
 - solves the stated problem within its declared scope;
 - respects module ownership, dependency direction, and API/data boundaries;
@@ -35,11 +35,11 @@ Reviewers verify that a change:
 - has proportionate tests and honest verification results;
 - updates OpenAPI, Flyway migrations, ADRs, or documentation when applicable.
 
-Review comments should distinguish blocking correctness, security, and maintainability concerns from optional suggestions.
+AI or human review may supplement this self-review. Separate blocking correctness, security, and maintainability concerns from optional suggestions.
 
 ## Continuous learning
 
-Every important feature should leave the developer able to explain the concepts used, the technical choices made, and the tests that demonstrate the expected behavior. Capture the essential reasoning in the pull request, relevant code comments, or documentation at the level needed to support future maintenance; do not turn routine changes into tutorials.
+Every important feature should leave the developer able to explain the concepts used, the technical choices made, and the tests that demonstrate the expected behavior. Capture the essential reasoning in the task/change record, commit message, relevant code comments, or versioned maintenance documentation; do not turn routine changes into tutorials. Offer detailed exercises and personal tutorials in the conversation or the ignored `.learning/` directory.
 
 ## Definition of Done
 
@@ -54,9 +54,9 @@ A change is ready for review only when all applicable items are true:
 - [ ] API contract, database migration, configuration example, and documentation changes are included when applicable.
 - [ ] No secrets, personal data, build artefacts, or local configuration files are included.
 - [ ] Security, authorization, audit, and human-approval impacts were assessed where relevant.
-- [ ] Residual risks, exceptions, and follow-up work are visible in the pull request.
-- [ ] For an important feature, the concepts used, technical choices, and relevant tests are understandable from the pull request, code, or documentation.
-- [ ] A human reviewer has approved the change before merge or deployment. Any push still requires the explicit user validation required by `AGENTS.md`.
+- [ ] Residual risks, exceptions, and follow-up work are recorded in the task/change record, commit message, or pull request when one exists.
+- [ ] For an important feature, the concepts used, technical choices, and relevant tests are understandable from the task/change record, code, or documentation.
+- [ ] A personal review has been completed. Any integration into `main`, push, merge, or deployment still requires the explicit user validation required by `AGENTS.md`.
 
 ## Planned automated controls
 
@@ -71,7 +71,7 @@ No build or CI is created until it can execute meaningful checks. When the backe
 | Dependency verification | Detect vulnerable or unexpected dependencies and constrain resolution | Configure dependency locking/verification and vulnerability review once dependencies exist |
 | Secret scanning | Prevent credential commits | Enable repository/CI secret scanning before the first integration credentials are used |
 
-The selected tools, versions, thresholds, and exceptions must be documented in the backend bootstrap pull request. A check must fail on a meaningful violation; do not add status-only CI steps.
+The selected tools, versions, thresholds, and exceptions must be documented in the backend bootstrap task or pull request when one exists. A check must fail on a meaningful violation; do not add status-only CI steps.
 
 ## When to make an exception
 
@@ -84,4 +84,4 @@ Examples:
 - keep a simple transaction synchronous instead of introducing events and eventual consistency;
 - defer a shared abstraction until there are at least two real consumers with the same stable need.
 
-Document the reason, alternatives considered, and revisit trigger in the pull request. Escalate to an ADR if the exception changes a cross-module rule, security boundary, or long-lived technology choice.
+Document the reason, alternatives considered, and revisit trigger in the task/change record or pull request when one exists. Escalate to an ADR if the exception changes a cross-module rule, security boundary, or long-lived technology choice.
