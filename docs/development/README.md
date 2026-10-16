@@ -39,4 +39,4 @@ Avoid generic skills that merely repeat repository instructions or one-off tasks
 
 ## Tooling status
 
-Tool availability depends on the developer machine. The bootstrap establishes no build tool or CI workflow because no executable application exists yet.
+The Gradle Wrapper and the executable Spring Boot technical bootstrap live in `backend/`. Tool availability still depends on the developer machine; CI remains deferred until it can execute meaningful build and test commands.

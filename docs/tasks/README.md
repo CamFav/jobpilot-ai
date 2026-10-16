@@ -4,9 +4,9 @@ This is a planning seed, not a substitute for GitHub Issues. Convert approved it
 
 ## Recommended next slices
 
-1. Define the first user journey and information model: candidate profile, multiple search profiles, offer, recommendation explanation, document language, application, and approval states.
-2. Bootstrap the Spring Boot modular monolith with Java 25 LTS, a Java-25-compatible Gradle wrapper, OpenAPI, PostgreSQL, Flyway, and test conventions.
-3. Add local Docker Compose services for PostgreSQL and the backend only after their configuration is defined.
+1. Confirm the first implementation slice for search profiles: ownership, deletion/retention, API error shape, and identity boundary.
+2. Implement the first Search Profiles vertical slice on the Java 25 backend, with OpenAPI, Flyway migration, and proportionate tests.
+3. Run and verify the existing local PostgreSQL Compose service before adding any further local infrastructure.
 4. Bootstrap the Flutter Android application around the selected first user journey.
 5. Establish GitHub Actions once there are meaningful build and test commands to run.
 

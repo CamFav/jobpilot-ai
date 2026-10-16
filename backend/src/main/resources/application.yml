@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: jobpilot-backend
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/jobpilot}
+    username: ${DATABASE_USERNAME:jobpilot}
+    password: ${DATABASE_PASSWORD:change-me-locally}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+server:
+  error:
+    include-message: never
+    include-binding-errors: never
+    include-stacktrace: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never

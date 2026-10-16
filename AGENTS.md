@@ -29,7 +29,7 @@ At the end of a task, report:
 
 ## Repository direction
 
-JobPilot AI is planned as a modular monolith with a Java 25 LTS / Spring Boot backend, Flutter mobile application (Android first, then iOS), future Angular web application, PostgreSQL/Flyway persistence, n8n integrations, AI-provider integrations, Python document processing, and Docker Compose for local infrastructure. These applications are intentionally not scaffolded until a dedicated, approved task.
+JobPilot AI is planned as a modular monolith with a Java 25 LTS / Spring Boot backend, Flutter mobile application (Android first, then iOS), future Angular web application, PostgreSQL/Flyway persistence, n8n integrations, AI-provider integrations, Python document processing, and Docker Compose for local infrastructure. The technical backend bootstrap lives in `backend/`; business modules and the other applications remain deliberately deferred until dedicated, approved tasks.
 
 ## Architecture and modularity rules
 
